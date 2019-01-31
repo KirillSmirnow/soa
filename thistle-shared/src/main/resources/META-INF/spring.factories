@@ -1,1 +1,2 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=thistle.shared.FeignsAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=thistle.shared.FeignsAutoConfiguration,\
+  thistle.shared.ExceptionHandlingAutoConfiguration
