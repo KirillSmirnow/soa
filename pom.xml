@@ -11,6 +11,9 @@
 
     <modules>
         <module>thistle-registry</module>
+        <module>thistle-gateway</module>
+        <module>thistle-shared</module>
+        <module>thistle-auth</module>
     </modules>
 
     <properties>
