@@ -1,19 +1,19 @@
 package thistle.auth.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RestController;
-import thistle.shared.intrf.AuthController;
-import thistle.shared.model.Thistle;
-
-import java.util.concurrent.ThreadLocalRandom;
+import thistle.auth.service.UserService;
+import thistle.shared.auth.AuthController;
+import thistle.shared.auth.SignUp;
 
 @RestController
+@RequiredArgsConstructor
 public class AuthControllerImpl implements AuthController {
 
+    private final UserService userService;
+
     @Override
-    public Thistle getThistle() {
-        return Thistle.builder()
-                .name("Helloooo!")
-                .height(ThreadLocalRandom.current().nextDouble(10, 100))
-                .build();
+    public void signUp(SignUp signUp) {
+        userService.signUp(signUp);
     }
 }

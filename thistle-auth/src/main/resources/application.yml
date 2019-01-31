@@ -1,5 +1,11 @@
 spring:
   application:
     name: auth
+  datasource:
+    url: jdbc:postgresql://localhost:5432/thistle-auth
+    username: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
 server:
   port: 0
