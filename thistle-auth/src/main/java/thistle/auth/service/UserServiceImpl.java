@@ -15,7 +15,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void signUp(SignUp signUp) {
-        if (userRepository.findByLogin(signUp.getLogin()).isPresent()) {
+        if (userRepository.existsById(signUp.getLogin())) {
             throw new ThistleException("Login is already taken");
         }
         userRepository.save(new User(signUp.getLogin(), signUp.getNickname(), signUp.getPassword()));
