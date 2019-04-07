@@ -15,6 +15,7 @@
         <module>soa-shared</module>
         <module>soa-gateway</module>
         <module>soa-auth</module>
+        <module>soa-profile</module>
     </modules>
 
     <parent>

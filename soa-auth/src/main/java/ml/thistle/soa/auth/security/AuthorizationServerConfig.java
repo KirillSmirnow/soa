@@ -20,7 +20,7 @@ import java.time.Duration;
 @RequiredArgsConstructor
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
-    private static final Duration ACCESS_TOKEN_VALIDITY = Duration.ofMinutes(5);
+    private static final Duration ACCESS_TOKEN_VALIDITY = Duration.ofDays(30);
     private static final Duration REFRESH_TOKEN_VALIDITY = Duration.ofDays(100);
 
     private final AuthenticationManager authenticationManager;

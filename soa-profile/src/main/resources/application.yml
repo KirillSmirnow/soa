@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: profile
+  data:
+    mongodb:
+      database: soa
+server:
+  port: 0
