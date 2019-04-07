@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: auth
+  data:
+    mongodb:
+      database: soa
+server:
+  port: 0
