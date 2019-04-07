@@ -16,6 +16,7 @@
         <module>soa-gateway</module>
         <module>soa-auth</module>
         <module>soa-profile</module>
+        <module>soa-horoscope</module>
     </modules>
 
     <parent>

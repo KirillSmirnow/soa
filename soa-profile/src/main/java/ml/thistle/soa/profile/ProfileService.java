@@ -2,6 +2,8 @@ package ml.thistle.soa.profile;
 
 import lombok.RequiredArgsConstructor;
 import ml.thistle.soa.shared.exception.SoaException;
+import ml.thistle.soa.shared.horoscope.HoroscopeController;
+import ml.thistle.soa.shared.horoscope.UserHoroscope;
 import ml.thistle.soa.shared.profile.Profile;
 import ml.thistle.soa.shared.profile.ProfileController;
 import ml.thistle.soa.shared.profile.ProfileEdit;
@@ -14,6 +16,7 @@ import java.time.LocalDate;
 public class ProfileService implements ProfileController {
 
     private final UserProfileRepository profileRepository;
+    private final HoroscopeController horoscopeController;
 
     private static int calculateAge(LocalDate birthday) {
         LocalDate today = LocalDate.now();
@@ -37,7 +40,7 @@ public class ProfileService implements ProfileController {
         UserProfile profile = profileRepository.findById(username)
                 .orElseThrow(() -> new SoaException("Profile not found"));
         int age = calculateAge(profile.getBirthday());
-        String horoscope = "Horoscope is not available now";
+        UserHoroscope horoscope = horoscopeController.getHoroscope(profile.getBirthday());
         return new Profile(username, profile.getBirthday(), age, horoscope);
     }
 }
