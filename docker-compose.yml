@@ -1,0 +1,29 @@
+version: '3'
+services:
+  soa-registry:
+    build:
+      context: soa-registry
+    ports:
+      - 8761:8761
+  soa-gateway:
+    build:
+      context: soa-gateway
+    environment:
+      - SECURITY_KEY=123456
+    ports:
+      - 45678:45678
+  soa-auth:
+    build:
+      context: soa-auth
+    environment:
+      - SECURITY_KEY=123456
+  soa-auth-mongo:
+    image: mongo
+  soa-profile:
+    build:
+      context: soa-profile
+  soa-profile-mongo:
+    image: mongo
+  soa-horoscope:
+    build:
+      context: soa-horoscope
